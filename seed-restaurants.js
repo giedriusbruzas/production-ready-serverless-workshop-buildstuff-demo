@@ -1,7 +1,5 @@
-const { REGION, STAGE } = process.env
-
 const AWS = require('aws-sdk')
-AWS.config.region = REGION
+AWS.config.region = 'eu-central-1'
 const dynamodb = new AWS.DynamoDB.DocumentClient()
 const ssm = new AWS.SSM()
 
@@ -49,7 +47,7 @@ let restaurants = [
 ];
 
 const getTableName = async () => {
-  return `restaurants-${STAGE}-yancui`
+  return `restaurants-dev-giedriusbruzas`
 }
 
 const run = async () => {
